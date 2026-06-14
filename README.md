@@ -11,7 +11,7 @@ A Discord bot to practice your Japanese language skills with!
 ## How To Use
 
 
-Command prefix is '/' e.g. !kana
+Command prefix is '/' e.g. /kana
 
 Command arguments are seperated by one space
 
