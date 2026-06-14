@@ -4,6 +4,10 @@
 
 A Discord bot to practice your Japanese language skills with!
 
+<p align="center">
+  <img src="https://cdn.pfps.gg/pfps/6635-katyusha.png" alt="Icon"/>
+</p>
+
 ## How To Use
 
 
