@@ -17,6 +17,11 @@ async def on_ready():
 
     print(f"Logged In As A Bot {bot.user}")
 
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        pass
+
 @bot.tree.command()
 async def hello(interaction: discord.Interaction):
     await interaction.response.send_message("Hi!")
