@@ -40,7 +40,7 @@ async def docs(interaction: discord.Interaction):
     await interaction.response.send_message(f"@{user.username} Documentation At https://github.com/FroSty361/NihonBot")
 
 @bot.tree.command(guild=TEST_GUILD, name="kana", description="Practice Kana")
-async def kana(interaction: discord.Interaction, amount: int, kana_type: str = 'b'):
+async def kana(interaction: discord.Interaction, amount: str, kana_type: str = 'b'):
     user = await register_user(interaction)
 
     if user.process != Processes.NONE:
@@ -48,10 +48,10 @@ async def kana(interaction: discord.Interaction, amount: int, kana_type: str = '
 
         return
 
-    if amount <= 0:
-        await interaction.response.send_message("Amount Must Be More Than Zero", ephemeral=True)
+    # if amount <= 0:
+        # await interaction.response.send_message("Amount Must Be More Than Zero", ephemeral=True)
 
-        return
+        # return
 
     user.process = Processes.KANA_PRACTICE
 
@@ -59,7 +59,7 @@ async def kana(interaction: discord.Interaction, amount: int, kana_type: str = '
 
     view = KanaPracticeView(user.KanaPracticeProcess)
 
-    await interaction.response.send_message(f"{user.KanaPracticeProcess.practicingHiragana} {user.KanaPracticeProcess.practicingKatakana}", view=view)
+    await interaction.response.send_message("Ok Lets Start!", view=view)
 
 # User Logic
 

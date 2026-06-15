@@ -82,13 +82,25 @@ class Processes(Enum):
 
 class KanaPracticeProcess():
 
-    def __init__(self, amount: int, kana_type: str):
+    def __init__(self, amount: str, kana_type: str):
         self.amount = amount
+        self.isIndefiniteAmount = False
         self.amountCompleted = 0
         self.amountCorrect = 0
         self.usedHiragana = []
         self.usedKatakana = []
         self.currentAnswersForQuestion = []
+
+        amount = amount.lower()
+
+        if amount == "indef": # For Indefinite Amount
+            self.isIndefiniteAmount = True
+        elif self.string_is_int(amount):
+            self.isIndefiniteAmount = False
+
+            self.amount = int(amount)
+        else:
+            self.isIndefiniteAmount = True
 
         kana_type = kana_type.lower()
 
@@ -145,16 +157,42 @@ class KanaPracticeProcess():
 
             returnMessage = "Correct! \n"
         else:
-            returnMessage = f"Incorrect! \n The Correct Answer Of {correct_answer[0]} Is {correct_answer[1]} \n"
+            returnMessage = f"Incorrect! The Correct Answer Of {correct_answer[0]} Is {correct_answer[1]} \n"
 
-        if self.amountCompleted >= self.amount:
+        returnMessage += f"{self.amountCorrect} Correct Out Of {self.amountCompleted} \n"
+
+        if self.isIndefiniteAmount == False:
+            returnMessage += f"{self.amount - self.amountCompleted} Questions Left \n"
+
+        if self.isIndefiniteAmount == False and self.amountCompleted >= self.amount:
             returnMessage += self.stop_process()
 
         return returnMessage
 
     def stop_process(self):
-        percentCorrect = round((self.amountCorrect / self.amount) * 100, 3)
+        stop_process_message = ""
 
-        stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amount}! That Is {percentCorrect} Percent Correct!"
+        if self.isIndefiniteAmount:
+            try:
+                percentCorrect = round((self.amountCorrect / self.amountCompleted) * 100, 3)
+
+                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}! That Is {percentCorrect} Percent Correct"
+            except ZeroDivisionError:
+                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}!"
+        else:
+            try:
+                percentCorrect = round((self.amountCorrect / self.amount) * 100, 3)
+
+                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amount}! That Is {percentCorrect} Percent Correct!"
+            except ZeroDivisionError:
+                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amount}!"
 
         return stop_process_message
+
+    # Helpers
+
+    def string_is_int(self, s : str):
+        if s[0] in ('-', '+'):
+            return s[1:].isdigit()
+
+        return s.isdigit()
