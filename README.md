@@ -18,6 +18,6 @@ Command arguments are seperated by one space
 ### Kana Practice
 <ins>_<sup>*</sup> = required_</ins>
 
-| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>***  | ***Arg - Kana Type***                                                |
-|---------------------------|----------------------------------------------|----------------------------------------------------------------------|
-| /kana                     | (int). Type "indef" for an indefinite amount | Type 'h' for hiragana. 'k' for katakana. 'b' or leave blank for both | 
+| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Kana Type***                                                |
+|---------------------------|---------------------------------------------|----------------------------------------------------------------------|
+| /kana                     | Type "indef" for an indefinite amount       | Type 'h' for hiragana. 'k' for katakana. 'b' or leave blank for both | 
