@@ -57,11 +57,7 @@ async def kana(interaction: discord.Interaction, amount: int, kana_type: str = '
 
     user.KanaPracticeProcess = KanaPracticeProcess(amount, kana_type)
 
-    print("Hi!")
-
     view = KanaPracticeView(user.KanaPracticeProcess)
-
-    print(view)
 
     await interaction.response.send_message(f"{user.KanaPracticeProcess.practicingHiragana} {user.KanaPracticeProcess.practicingKatakana}", view=view)
 
