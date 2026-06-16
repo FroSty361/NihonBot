@@ -65,7 +65,7 @@ class KanaPracticeView(discord.ui.View):
 
             await interaction.response.edit_message(view=self)
 
-            response = self.kanaPracticeProcess.answer_question(is_answer, interaction) # Returns Message And If Practice Questions Have Ended
+            response = await self.kanaPracticeProcess.answer_question(is_answer, interaction) # Returns Message And If Practice Questions Have Ended
             await interaction.followup.send(response[0], ephemeral=(not response[1]))
 
             if response[1] == False:
@@ -82,7 +82,7 @@ class KanaPracticeView(discord.ui.View):
 
     def create_stop_button_callback(self):
         async def stop_button_callback(interaction: discord.Interaction):
-            message = self.kanaPracticeProcess.stop_process()
+            message = await self.kanaPracticeProcess.stop_process(interaction)
 
             await interaction.response.send_message(message, ephemeral=True)
 

@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from dataManagement.runtime_data_management import users_runtime_data, UserRuntimeData
+from dataManagement.runtime_data_management import register_user
 from botProcesses.bot_processes import Processes, KanaPracticeProcess
 
 intents = discord.Intents.all()
@@ -34,13 +34,11 @@ async def on_app_command_error(interaction: discord.Interaction, error: discord.
 
 @bot.tree.command(guild=TEST_GUILD, name="docs", description="Provides A Link To The Documentation")
 async def docs(interaction: discord.Interaction):
-    user = await register_user(interaction)
-
-    await interaction.response.send_message(f"@{user.username} Documentation At https://github.com/FroSty361/NihonBot")
+    await interaction.response.send_message("Documentation At https://github.com/FroSty361/NihonBot")
 
 @bot.tree.command(guild=TEST_GUILD, name="kana", description="Practice Kana")
 async def kana(interaction: discord.Interaction, amount: str, kana_type: str = 'b'):
-    user = await register_user(interaction)
+    user = await register_user(interaction) # Or Just Get User If Already Registered In Dictionary
 
     if user.process != Processes.NONE:
         await send_user_already_in_process_error(interaction, user.process)
@@ -54,16 +52,6 @@ async def kana(interaction: discord.Interaction, amount: str, kana_type: str = '
     user.KanaPracticeProcess = KanaPracticeProcess(amount, kana_type)
 
     await user.KanaPracticeProcess.create_question(interaction)
-
-# User Logic
-
-async def register_user(interaction: discord.Interaction):
-    user_id = interaction.user.id
-
-    if user_id not in users_runtime_data:
-        users_runtime_data[user_id] = UserRuntimeData(username=interaction.user.name)
-
-    return users_runtime_data[user_id]
 
 # Comment
 

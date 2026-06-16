@@ -168,7 +168,7 @@ class KanaPracticeProcess():
 
         return (katakana_key, katakana[katakana_key], is_answer)
 
-    def answer_question(self, is_answer: bool, interaction: discord.Interaction):
+    async def answer_question(self, is_answer: bool, interaction: discord.Interaction):
         self.amountCompleted += 1
 
         correct_answer = next((item for item in self.currentAnswersForQuestion if item[2] == True), None)
@@ -192,11 +192,11 @@ class KanaPracticeProcess():
         if self.isIndefiniteAmount == False and self.amountCompleted >= self.amount:
             ended = True
 
-            returnMessage += self.stop_process(interaction)
+            returnMessage += await self.stop_process(interaction)
 
         return (returnMessage, ended)
 
-    def stop_process(self, interaction: discord.Interaction):
+    async def stop_process(self, interaction: discord.Interaction):
         stop_process_message = ""
 
         user_id = interaction.user.id
@@ -215,6 +215,11 @@ class KanaPracticeProcess():
                 stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amount}! That Is {percent_correct} Percent Correct!"
             except ZeroDivisionError:
                 stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amount}!"
+
+        from dataManagement.runtime_data_management import register_user
+        user = await register_user(interaction)
+
+        user.process = Processes.NONE
 
         return stop_process_message
 
