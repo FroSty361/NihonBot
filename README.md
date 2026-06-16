@@ -8,14 +8,17 @@ A Discord bot to practice your Japanese language skills with!
   <img src="https://cdn.pfps.gg/pfps/6635-katyusha.png" alt="Icon"/>
 </p>
 
-## How To Use
-
+# How To Use
 
 Command prefix is '/' e.g. /kana
 
 Command arguments are seperated by one space
 
-### Kana Practice
+## Contents
+
+* [Kana Practice](#KanaPractice)
+
+### KanaPractice
 <ins>_<sup>*</sup> = required_</ins>
 
 | ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Kana Type***                                                |
