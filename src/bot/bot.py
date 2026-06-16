@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
 from dataManagement.runtime_data_management import register_user
 from botProcesses.bot_processes import Processes, KanaPracticeProcess
 
@@ -33,10 +34,14 @@ async def on_app_command_error(interaction: discord.Interaction, error: discord.
         pass
 
 @bot.tree.command(guild=TEST_GUILD, name="docs", description="Provides A Link To The Documentation")
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+@app_commands.allowed_installs(guilds=True, users=True)
 async def docs(interaction: discord.Interaction):
     await interaction.response.send_message("Documentation At https://github.com/FroSty361/NihonBot")
 
 @bot.tree.command(guild=TEST_GUILD, name="kana", description="Practice Kana")
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+@app_commands.allowed_installs(guilds=True, users=True)
 async def kana(interaction: discord.Interaction, amount: str, kana_type: str = 'b'):
     user = await register_user(interaction) # Or Just Get User If Already Registered In Dictionary
 
