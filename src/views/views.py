@@ -1,6 +1,6 @@
 import discord
 from typing import Optional
-import botProcesses.bot_processes
+import botProcesses.kana_practice_process
 
 class KanaPracticeView(discord.ui.View):
     # Constants

@@ -2,7 +2,8 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from dataManagement.runtime_data_management import register_user
-from botProcesses.bot_processes import Processes, KanaPracticeProcess
+from botProcesses.bot_process_definitions import Processes
+from botProcesses.kana_practice_process import KanaPracticeProcess
 
 intents = discord.Intents.all()
 intents.message_content = True

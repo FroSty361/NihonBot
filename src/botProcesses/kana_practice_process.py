@@ -1,12 +1,8 @@
 import discord
-from enum import Enum
 import random
 from views.views import KanaPracticeView
-from bot_process_constants import hiragana, katakana
-
-class Processes(Enum):
-    NONE = "None"
-    KANA_PRACTICE = "Kana"
+from botProcesses.bot_process_constants import hiragana, katakana
+from botProcesses.bot_process_definitions import Processes
 
 class KanaPracticeProcess():
     def __init__(self, amount: str, kana_type: str):
