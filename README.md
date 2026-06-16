@@ -17,10 +17,17 @@ Command arguments are seperated by one space
 ## Contents
 
 * [Kana Practice](#KanaPractice)
+* [Icon Vocab Practice](#IconVocabPractice)
 
-### KanaPractice
 <ins>_<sup>*</sup> = required_</ins>
+### KanaPractice
 
 | ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Kana Type***                                                |
 |---------------------------|---------------------------------------------|----------------------------------------------------------------------|
-| /kana                     | Type "indef" for an indefinite amount       | Type 'h' for hiragana. 'k' for katakana. 'b' or leave blank for both | 
+| /kana                     | Type "indef" for an indefinite amount       | Type 'h' for hiragana. 'k' for katakana. 'b' or leave blank for both |
+
+### IconVocabPractice
+
+| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Use Furigana***                                      |
+|---------------------------|---------------------------------------------|---------------------------------------------------------------|
+| /icon_vocab               | Type "indef" for an indefinite amount       | True to use furigana for pronunciation. Otherwise shows kanji |
