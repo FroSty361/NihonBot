@@ -134,9 +134,17 @@ class KanaPracticeProcess():
             is_answer = i == 0
 
             if random.random() < 0.5: # Hiragana
-                self.currentAnswersForQuestion.append(self.get_hiragana_question(is_answer))
+                hiragana_answer = self.get_hiragana_question(is_answer)
+
+                self.currentAnswersForQuestion.append(hiragana_answer)
+
+                self.usedHiragana.append(hiragana_answer[0])
             else: # Katakana
-                self.currentAnswersForQuestion.append(self.get_katakana_question(is_answer))
+                katakana_answer = self.get_katakana_question(is_answer)
+
+                self.currentAnswersForQuestion.append(katakana_answer)
+
+                self.usedKatakana.append(katakana_answer[0])
 
         self.currentAnswersForQuestion = random.sample(self.currentAnswersForQuestion, len(self.currentAnswersForQuestion)) # Shuffle
 
