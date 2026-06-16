@@ -1,18 +1,16 @@
 import discord
 import random
-from views.views import KanaPracticeView
+from views.views import QuizPracticeView
 from botProcesses.bot_process_constants import hiragana, katakana
-from botProcesses.bot_process_definitions import Processes
+from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
 
-class KanaPracticeProcess():
+
+class KanaPracticeProcess(BaseQuizProcess):
     def __init__(self, amount: str, kana_type: str):
-        self.amount = amount
-        self.isIndefiniteAmount = False
-        self.amountCompleted = 0
-        self.amountCorrect = 0
+        super().__init__(amount, Processes.KANA_QUIZ_PRACTICE)
+
         self.usedHiragana = []
         self.usedKatakana = []
-        self.currentAnswersForQuestion = []
 
         amount = amount.lower()
 
@@ -70,7 +68,7 @@ class KanaPracticeProcess():
 
         self.currentAnswersForQuestion = random.sample(self.currentAnswersForQuestion, len(self.currentAnswersForQuestion)) # Shuffle
 
-        view = KanaPracticeView(self, interaction)
+        view = QuizPracticeView(self, interaction)
 
         await view.display_question(interaction)
 
@@ -97,66 +95,3 @@ class KanaPracticeProcess():
         katakana_key = random.choice(usable_katakana)
 
         return (katakana_key, katakana[katakana_key], is_answer)
-
-    async def answer_question(self, is_answer: bool, interaction: discord.Interaction):
-        self.amountCompleted += 1
-
-        correct_answer = next((item for item in self.currentAnswersForQuestion if item[2] == True), None)
-
-        returnMessage = ""
-
-        if is_answer:
-            self.amountCorrect += 1
-
-            returnMessage = "Correct! \n"
-        else:
-            returnMessage = f"Incorrect! The Correct Answer Of {correct_answer[0]} Is {correct_answer[1]} \n"
-
-        returnMessage += f"{self.amountCorrect} Correct Out Of {self.amountCompleted} \n"
-
-        if self.isIndefiniteAmount == False:
-            returnMessage += f"{self.amount - self.amountCompleted} Questions Left \n"
-
-        ended = False
-
-        if self.isIndefiniteAmount == False and self.amountCompleted >= self.amount:
-            ended = True
-
-            returnMessage += await self.stop_process(interaction)
-
-        return (returnMessage, ended)
-
-    async def stop_process(self, interaction: discord.Interaction):
-        stop_process_message = ""
-
-        user_id = interaction.user.id
-
-        if self.isIndefiniteAmount:
-            try:
-                percent_correct = round((self.amountCorrect / self.amountCompleted) * 100, 3)
-
-                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}! That Is {percent_correct} Percent Correct"
-            except ZeroDivisionError:
-                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}!"
-        else:
-            try:
-                percent_correct = round((self.amountCorrect / self.amount) * 100, 3)
-
-                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amount}! That Is {percent_correct} Percent Correct!"
-            except ZeroDivisionError:
-                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amount}!"
-
-        from dataManagement.runtime_data_management import register_user
-        user = await register_user(interaction)
-
-        user.process = Processes.NONE
-
-        return stop_process_message
-
-    # Helpers
-
-    def string_is_int(self, s : str):
-        if s[0] in ('-', '+'):
-            return s[1:].isdigit()
-
-        return s.isdigit()

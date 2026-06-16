@@ -38,7 +38,7 @@ async def on_app_command_error(interaction: discord.Interaction, error: discord.
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.allowed_installs(guilds=True, users=True)
 async def docs(interaction: discord.Interaction):
-    await interaction.response.send_message("Documentation At https://github.com/FroSty361/NihonBot")
+    await interaction.response.send_message("🍍 Documentation At https://github.com/FroSty361/NihonBot")
 
 @bot.tree.command(guild=TEST_GUILD, name="kana", description="Practice Kana")
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
@@ -51,7 +51,7 @@ async def kana(interaction: discord.Interaction, amount: str, kana_type: str = '
 
         return
 
-    user.process = Processes.KANA_PRACTICE
+    user.process = Processes.KANA_QUIZ_PRACTICE
 
     await interaction.response.send_message("Ok Lets Start!")
 
