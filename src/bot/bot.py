@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from dataManagement.runtime_data_management import users_runtime_data, UserRuntimeData
-from views.views import KanaPracticeView
 from botProcesses.bot_processes import Processes, KanaPracticeProcess
 
 intents = discord.Intents.all()
@@ -48,18 +47,13 @@ async def kana(interaction: discord.Interaction, amount: str, kana_type: str = '
 
         return
 
-    # if amount <= 0:
-        # await interaction.response.send_message("Amount Must Be More Than Zero", ephemeral=True)
-
-        # return
-
     user.process = Processes.KANA_PRACTICE
+
+    await interaction.response.send_message("Ok Lets Start!")
 
     user.KanaPracticeProcess = KanaPracticeProcess(amount, kana_type)
 
-    view = KanaPracticeView(user.KanaPracticeProcess)
-
-    await interaction.response.send_message("Ok Lets Start!", view=view)
+    await user.KanaPracticeProcess.create_question(interaction)
 
 # User Logic
 

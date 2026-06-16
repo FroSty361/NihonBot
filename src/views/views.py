@@ -1,6 +1,6 @@
 import discord
 from typing import Optional
-from botProcesses.bot_processes import KanaPracticeProcess
+import botProcesses.bot_processes
 
 class KanaPracticeView(discord.ui.View):
     # Constants
@@ -16,9 +16,9 @@ class KanaPracticeView(discord.ui.View):
     labelFour = "4"
     labelFive = "5"
 
-    kanaPracticeProcess: Optional[KanaPracticeProcess] = None
+    kanaPracticeProcess: Optional[botProcesses.bot_processes.KanaPracticeProcess] = None
 
-    def __init__(self, kana_practice_process: KanaPracticeProcess):
+    def __init__(self, kana_practice_process: botProcesses.bot_processes.KanaPracticeProcess, interaction: discord.Interaction):
         super().__init__(timeout=None)
 
         self.kanaPracticeProcess = kana_practice_process
@@ -29,15 +29,20 @@ class KanaPracticeView(discord.ui.View):
             return
 
         if not self.kanaPracticeProcess.currentAnswersForQuestion:
-            print("KanaPracticeProcess.currentAnswersForQuestion is None. Creating Answers")
+            print("KanaPracticeProcess.currentAnswersForQuestion is None. Stopping Process")
 
-            self.kanaPracticeProcess.create_question()
+            return
 
         # Make Buttons
 
         self.create_answer_buttons()
 
         self.create_stop_button()
+
+    async def display_question(self, interaction: discord.Interaction):
+        correct_answer = next((item for item in self.kanaPracticeProcess.currentAnswersForQuestion if item[2] == True), None)
+
+        await interaction.followup.send(f"What Is Romaji For {correct_answer[0]}?", view=self)
 
     # Buttons
 
@@ -55,17 +60,16 @@ class KanaPracticeView(discord.ui.View):
         async def answer_button_callback(interaction: discord.Interaction):
             buttons = self.get_buttons()
 
-            print(len(buttons))
-
             for button in buttons:
                 button.disabled = True
 
-                print(button.custom_id)
-
             await interaction.response.edit_message(view=self)
 
-            message = self.kanaPracticeProcess.answer_question(is_answer)
-            await interaction.followup.send(message, ephemeral=True)
+            response = self.kanaPracticeProcess.answer_question(is_answer, interaction) # Returns Message And If Practice Questions Have Ended
+            await interaction.followup.send(response[0], ephemeral=(not response[1]))
+
+            if response[1] == False:
+                await self.kanaPracticeProcess.create_question(interaction)
 
         return answer_button_callback
 

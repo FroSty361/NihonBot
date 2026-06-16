@@ -1,6 +1,8 @@
+import discord
 from enum import Enum
 import random
 from dataclasses import field
+from views.views import KanaPracticeView
 
 # Lists
 
@@ -19,7 +21,7 @@ hiragana = {
 
     'が': 'ga', 'ぎ': 'gi', 'ぐ': 'gu', 'げ': 'ge', 'ご': 'go',
     'ざ': 'za', 'じ': 'ji', 'ず': 'zu', 'ぜ': 'ze', 'ぞ': 'zo',
-    'だ': 'da', 'ぢ': 'ji', 'づ': 'zu', 'で': 'de', 'ど': 'do',
+    'だ': 'da', 'ぢ': 'ji', 'づ': 'dzu', 'で': 'de', 'ど': 'do',
     'ば': 'ba', 'び': 'bi', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
     'ぱ': 'pa', 'ぴ': 'pi', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
 
@@ -52,7 +54,7 @@ katakana = {
 
     'ガ': 'ga', 'ギ': 'gi', 'グ': 'gu', 'ゲ': 'ge', 'ゴ': 'go',
     'ザ': 'za', 'ジ': 'ji', 'ズ': 'zu', 'ゼ': 'ze', 'ゾ': 'zo',
-    'ダ': 'da', 'ヂ': 'ji', 'ヅ': 'zu', 'デ': 'de', 'ド': 'do',
+    'ダ': 'da', 'ヂ': 'ji', 'ヅ': 'dzu', 'デ': 'de', 'ド': 'do',
     'バ': 'ba', 'ビ': 'bi', 'ブ': 'bu', 'ベ': 'be', 'ボ': 'bo',
     'パ': 'pa', 'ピ': 'pi', 'プ': 'pu', 'ペ': 'pe', 'ポ': 'po',
 
@@ -81,7 +83,6 @@ class Processes(Enum):
     KANA_PRACTICE = "Kana"
 
 class KanaPracticeProcess():
-
     def __init__(self, amount: str, kana_type: str):
         self.amount = amount
         self.isIndefiniteAmount = False
@@ -99,6 +100,11 @@ class KanaPracticeProcess():
             self.isIndefiniteAmount = False
 
             self.amount = int(amount)
+
+            if self.amount <= 0:
+                print("Kana Practice Process Was Less Than Or Equal To Zero. Setting To 16")
+
+                self.amount = 16
         else:
             self.isIndefiniteAmount = True
 
@@ -112,26 +118,31 @@ class KanaPracticeProcess():
             self.practicingHiragana = True
             self.practicingKatakana = True
 
-    def create_question(self):
+    async def create_question(self, interaction: discord.Interaction):
         if self.practicingHiragana == False and self.practicingKatakana == False:
             print("Says Practicing Both Hiragana And Katakana Is False. Setting Both To True")
 
             self.practicingHiragana = True
             self.practicingKatakana = True
 
-        if self.currentAnswersForQuestion == None:
+        if self.currentAnswersForQuestion is None:
             self.currentAnswersForQuestion = []
 
         self.currentAnswersForQuestion.clear()
 
         for i in range(5): # Five Possible Answers
-            if i == 0:
-                self.currentAnswersForQuestion.append(self.get_hiragana_question(True))
-            else:
-                self.currentAnswersForQuestion.append(self.get_hiragana_question(False))
+            is_answer = i == 0
+
+            if random.random() < 0.5: # Hiragana
+                self.currentAnswersForQuestion.append(self.get_hiragana_question(is_answer))
+            else: # Katakana
+                self.currentAnswersForQuestion.append(self.get_katakana_question(is_answer))
 
         self.currentAnswersForQuestion = random.sample(self.currentAnswersForQuestion, len(self.currentAnswersForQuestion)) # Shuffle
 
+        view = KanaPracticeView(self, interaction)
+
+        await view.display_question(interaction)
 
     def get_hiragana_question(self, is_answer: bool):
         used_hiragana_set = set(self.usedHiragana)
@@ -145,7 +156,19 @@ class KanaPracticeProcess():
 
         return (hiragana_key, hiragana[hiragana_key], is_answer)
 
-    def answer_question(self, is_answer: bool):
+    def get_katakana_question(self, is_answer: bool):
+        used_katakana_set = set(self.usedKatakana)
+        usable_katakana = [kana for kana in katakana.keys() if kana not in used_katakana_set]
+
+        if usable_katakana == [] or len(usable_katakana) <= 0:
+            used_katakana_set.clear()
+            usable_katakana = [kana for kana in katakana.keys() if kana not in used_katakana_set]
+
+        katakana_key = random.choice(usable_katakana)
+
+        return (katakana_key, katakana[katakana_key], is_answer)
+
+    def answer_question(self, is_answer: bool, interaction: discord.Interaction):
         self.amountCompleted += 1
 
         correct_answer = next((item for item in self.currentAnswersForQuestion if item[2] == True), None)
@@ -164,28 +187,34 @@ class KanaPracticeProcess():
         if self.isIndefiniteAmount == False:
             returnMessage += f"{self.amount - self.amountCompleted} Questions Left \n"
 
+        ended = False
+
         if self.isIndefiniteAmount == False and self.amountCompleted >= self.amount:
-            returnMessage += self.stop_process()
+            ended = True
 
-        return returnMessage
+            returnMessage += self.stop_process(interaction)
 
-    def stop_process(self):
+        return (returnMessage, ended)
+
+    def stop_process(self, interaction: discord.Interaction):
         stop_process_message = ""
+
+        user_id = interaction.user.id
 
         if self.isIndefiniteAmount:
             try:
-                percentCorrect = round((self.amountCorrect / self.amountCompleted) * 100, 3)
+                percent_correct = round((self.amountCorrect / self.amountCompleted) * 100, 3)
 
-                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}! That Is {percentCorrect} Percent Correct"
+                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}! That Is {percent_correct} Percent Correct"
             except ZeroDivisionError:
-                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}!"
+                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amountCompleted}!"
         else:
             try:
-                percentCorrect = round((self.amountCorrect / self.amount) * 100, 3)
+                percent_correct = round((self.amountCorrect / self.amount) * 100, 3)
 
-                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amount}! That Is {percentCorrect} Percent Correct!"
+                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amount}! That Is {percent_correct} Percent Correct!"
             except ZeroDivisionError:
-                stop_process_message = f"Completed! You Got {self.amountCorrect} Out Of {self.amount}!"
+                stop_process_message = f"<@{user_id}> Completed! You Got {self.amountCorrect} Out Of {self.amount}!"
 
         return stop_process_message
 
