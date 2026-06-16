@@ -71,3 +71,27 @@ katakana = {
     'ヴァ': 'va', 'ヴィ': 'vi', 'ヴェ': 've', 'ヴォ': 'vo',
     'ー': 'lengthen vowel'
 }
+
+# Icons
+
+icons_furigana = {
+    # Nouns
+
+    '🍎': 'りんご',
+    '🧑‍🎓': 'がくせい',
+    '🐱': 'ねこ',
+    '🧑‍⚕️': "いしゃ"
+
+    # Adjectives
+
+
+
+    # Verbs
+}
+
+icons_kanji = {
+    '🍎': '林檎',
+    '🧑‍🎓': '学生',
+    '🐱': '猫',
+    '🧑‍⚕️': "医者"
+}

@@ -14,20 +14,6 @@ class KanaPracticeProcess(BaseQuizProcess):
 
         amount = amount.lower()
 
-        if amount == "indef": # For Indefinite Amount
-            self.isIndefiniteAmount = True
-        elif self.string_is_int(amount):
-            self.isIndefiniteAmount = False
-
-            self.amount = int(amount)
-
-            if self.amount <= 0:
-                print("Kana Practice Process Was Less Than Or Equal To Zero. Setting To 16")
-
-                self.amount = 16
-        else:
-            self.isIndefiniteAmount = True
-
         kana_type = kana_type.lower()
 
         if kana_type == "h": # h For Hiragana
@@ -70,7 +56,7 @@ class KanaPracticeProcess(BaseQuizProcess):
 
         view = QuizPracticeView(self, interaction)
 
-        await view.display_question(interaction)
+        await view.display_question(interaction, self.processType)
 
     def get_hiragana_question(self, is_answer: bool):
         used_hiragana_set = set(self.usedHiragana)

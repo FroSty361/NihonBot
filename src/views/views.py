@@ -24,8 +24,6 @@ class QuizPracticeView(discord.ui.View):
 
         self.botProcess = bot_process
 
-        print(self.botProcess)
-
         if self.botProcess is None:
             print(f"{self.botProcess} is None. Stopping Process")
 
@@ -42,10 +40,16 @@ class QuizPracticeView(discord.ui.View):
 
         self.create_stop_button()
 
-    async def display_question(self, interaction: discord.Interaction):
+    async def display_question(self, interaction: discord.Interaction, process_type: Processes):
         correct_answer = next((item for item in self.botProcess.currentAnswersForQuestion if item[2] == True), None)
 
-        await interaction.followup.send(f"What Is Romaji For {correct_answer[0]}?", view=self)
+        match process_type:
+            case Processes.KANA_QUIZ_PRACTICE:
+                await interaction.followup.send(f"What Is Romaji For {correct_answer[0]}?", view=self)
+            case Processes.ICON_VOCAB_QUIZ_PRACTICE:
+                await interaction.followup.send(f"What Is Vocabulary From {correct_answer[0]}?", view=self)
+            case _:
+                print(f"Process Type For Displaying Question In Quiz Practice View Is Not Supported, {process_type.value}")
 
     # Buttons
 

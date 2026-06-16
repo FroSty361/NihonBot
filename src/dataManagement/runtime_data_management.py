@@ -22,4 +22,4 @@ class UserRuntimeData:
 
     process: Processes = Processes.NONE
 
-    KanaPracticeProcess: Optional[KanaPracticeProcess] = None
+    CurrentProcess = None

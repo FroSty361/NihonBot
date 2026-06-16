@@ -17,6 +17,20 @@ class BaseQuizProcess:
 
         self.currentAnswersForQuestion = []
 
+        if amount == "indef": # For Indefinite Amount
+            self.isIndefiniteAmount = True
+        elif self.string_is_int(amount):
+            self.isIndefiniteAmount = False
+
+            self.amount = int(amount)
+
+            if self.amount <= 0:
+                print(f"{self} Amount Was Less Than Or Equal To Zero. Setting To 16")
+
+                self.amount = 16
+        else:
+            self.isIndefiniteAmount = True
+
     def __str__(self):
         return f"{self.processType.value}"
 
