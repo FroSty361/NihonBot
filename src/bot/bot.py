@@ -38,8 +38,13 @@ async def on_app_command_error(interaction: discord.Interaction, error: discord.
 @bot.tree.command(guild=TEST_GUILD, name="docs", description="Provides A Link To The Documentation")
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.allowed_installs(guilds=True, users=True)
-async def docs(interaction: discord.Interaction):
-    await interaction.response.send_message("Documentation At https://github.com/FroSty361/NihonBot")
+@app_commands.choices(choice=[
+    app_commands.Choice(name="All", value=""),
+    app_commands.Choice(name="/kana", value="#Kana-Practice"),
+app_commands.Choice(name="/icon_vocab", value="#Icon-Vocab-Practice")
+])
+async def docs(interaction: discord.Interaction, choice: app_commands.Choice[str]):
+    await interaction.response.send_message(f"Documentation At https://github.com/FroSty361/NihonBot/{choice.value}")
 
 @bot.tree.command(guild=TEST_GUILD, name="kana", description="Practice Kana")
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
