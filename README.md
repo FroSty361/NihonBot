@@ -31,3 +31,5 @@ Command arguments are seperated by one space
 | ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Use Furigana***                                      |
 |---------------------------|---------------------------------------------|---------------------------------------------------------------|
 | /icon_vocab               | Type "indef" for an indefinite amount       | True to use furigana for pronunciation. Otherwise shows kanji |
+
+![NihonBot](http://counter.valgul.moe/@NihonBot?name=NihonBot&theme=booru-jaypee&padding=7&offset=0&align=bottom&scale=1&pixelated=1&darkmode=auto)
