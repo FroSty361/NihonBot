@@ -31,6 +31,11 @@ class IconVocabProcess(BaseQuizProcess):
                 answer = self.get_furigana_question(is_answer, guess_by_icon)
 
                 self.currentAnswersForQuestion.append(answer)
+
+                if guess_by_icon:
+                    self.usedIcons.append(answer[0])
+                else:
+                    self.usedIcons.append(answer[1])
             else:
                 answer = self.get_kanji_question(is_answer, guess_by_icon)
 
