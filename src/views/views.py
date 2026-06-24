@@ -1,6 +1,7 @@
 import discord
 from typing import Optional
 from botProcesses.bot_process_definitions import BaseQuizProcess, Processes
+from emoji import emojize, analyze
 
 
 class QuizPracticeView(discord.ui.View):
@@ -55,7 +56,9 @@ class QuizPracticeView(discord.ui.View):
 
     def create_answer_buttons(self):
         for i in range(5): # Five Possible Answers
-            answer_label = self.botProcess.currentAnswersForQuestion[i][1]
+            answer_label_str = self.botProcess.currentAnswersForQuestion[i][1]
+
+            answer_label = emojize(f"{answer_label_str}", language='alias')
 
             answer_button = discord.ui.Button(label=answer_label, style=discord.ButtonStyle.primary, custom_id=f"{self.ANSWER_BUTTON_ID_STRING}{i}")
 

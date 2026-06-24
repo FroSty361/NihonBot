@@ -68,7 +68,7 @@ async def kana(interaction: discord.Interaction, amount: str, kana_type: str = '
 @bot.tree.command(guild=TEST_GUILD, name="icon_vocab", description="Practice Vocabulary With Icons")
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.allowed_installs(guilds=True, users=True)
-async def icon_vocab(interaction: discord.Interaction, amount: str, use_furigana: bool):
+async def icon_vocab(interaction: discord.Interaction, amount: str, use_furigana: bool, add_flags: bool = False, add_time: bool = False):
     user = await register_user(interaction) # Or Just Get User If Already Registered In Dictionary
 
     if user.process != Processes.NONE:
@@ -80,7 +80,7 @@ async def icon_vocab(interaction: discord.Interaction, amount: str, use_furigana
 
     await interaction.response.send_message("Ok Lets Start!")
 
-    user.CurrentProcess = IconVocabProcess(amount, use_furigana)
+    user.CurrentProcess = IconVocabProcess(amount, use_furigana, add_flags, add_time)
 
     await user.CurrentProcess.create_question(interaction)
 
