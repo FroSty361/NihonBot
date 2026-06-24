@@ -36,9 +36,9 @@ Command arguments are seperated by one space
 
 ### Icon Vocab Practice
 
-| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Use Furigana***                                      |
-|---------------------------|---------------------------------------------|---------------------------------------------------------------|
-| /icon_vocab               | Type "indef" for an indefinite amount       | True to use furigana for pronunciation. Otherwise shows kanji |
+| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Use Furigana***                                      | ***Arg - Add Flags***       | ***Arg - Add Time***                         |
+|---------------------------|---------------------------------------------|---------------------------------------------------------------|-----------------------------|----------------------------------------------|
+| /icon_vocab               | Type "indef" for an indefinite amount       | True to use furigana for pronunciation. Otherwise shows kanji | Adds Flags To Practice With | Add Clocks To Practice Numbers And Time With |
 
 # Stats
 
