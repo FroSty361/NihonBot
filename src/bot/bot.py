@@ -5,6 +5,7 @@ from dataManagement.runtime_data_management import register_user
 from botProcesses.bot_process_definitions import Processes
 from botProcesses.kana_practice_process import KanaPracticeProcess
 from botProcesses.icon_vocab_process import IconVocabProcess
+from botProcesses.bot_process_constants import hiragana
 
 intents = discord.Intents.all()
 intents.message_content = True

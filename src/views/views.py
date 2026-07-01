@@ -92,9 +92,14 @@ class QuizPracticeView(discord.ui.View):
 
     def create_stop_button_callback(self):
         async def stop_button_callback(interaction: discord.Interaction):
+            buttons = self.get_buttons()
+
+            for button in buttons:
+                button.disabled = True
+
             message = await self.botProcess.stop_process(interaction)
 
-            await interaction.response.send_message(message, ephemeral=True)
+            await interaction.response.send_message(message, ephemeral=False)
 
         return stop_button_callback
 
