@@ -6,16 +6,12 @@ from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
 
 class VCVocabPracticeProcess(BaseQuizProcess):
     def __init__(self, amount: str, use_furigana: bool):
-        super().__init__(amount, Processes.KANA_QUIZ_PRACTICE)
+        super().__init__(amount, Processes.VC_VOCAB_QUIZ_PRACTICE)
 
         self.use_furigana = use_furigana
 
         self.usedFurigana = []
         self.usedKanji = []
-
-        amount = amount.lower()
-
-        self.usedFurigana = use_furigana
 
     async def create_question(self, interaction: discord.Interaction, vc = None):
         if self.currentAnswersForQuestion is None:

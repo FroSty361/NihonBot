@@ -154,15 +154,14 @@ icons_furigana_time = {
 icons_kanji = {
     # Nouns
 
-    '🍎': '林檎',
-    '🧑‍🎓': '学生',
-    '🐱': '猫',
-    '🧑‍⚕️': "医者",
+    "🍎": '林檎',
+    "🧑‍🎓": '学生',
+    "🐱": '猫',
+    "🧑‍⚕️": "医者",
     "📖": "本",
     "🏫": "学校",
     "🧑‍🏫": "先生",
     "✏️": "鉛筆",
-    "🖊️": "ペン",
     "⏰": "時間",
     "☎️": "電話",
     "🏝️": "島",
@@ -215,11 +214,59 @@ icons_kanji_time = {
 vc_vocab_furigana = {
     # Nouns
 
-
+    "りんご": "ringo.mp3",
+    "がくせい": "gakusei.mp3",
+    "ねこ": "neko.mp3",
+    "いしゃ": "isha.mp3",
+    "ほん": "hon.mp3",
+    "がっこう": "gakkou.mp3",
+    "せんせい": "sensei.mp3",
+    "ペン": "pen.mp3",
+    "スマホ": "sumaho.mp3",
+    "かさ": "kasa.mp3",
+    "しんぶん": "shinbun.mp3",
+    "じてんしゃ": "jitensha.mp3",
+    "ノート": "nooto.mp3",
+    "とけい": "tokei.mp3",
+    "さかな": "sakana.mp3",
+    "くつ": "kutsu",
+    "ぎんこう": "ginkou.mp3",
+    "トイレ": "toire.mp3",
+    "ゆうびんきょく": "yuubinkyoku.mp3",
+    "おんがく": "ongaku.mp3",
+    "テニス": "tenisu.mp3",
+    "テレビ": "terebi.mp3",
+    "アイスクリーム": "aisukuriimu.mp3",
+    "ハンバーガー": "hanbaagaa.mp3",
+    "ぉさけ": "osake.mp3",
+    "コーヒー": "koohii.mp3",
+    "みず": "mizu.mp3",
+    "おかね": "okane.mp3",
+    "えん": "en.mp3"
 }
 
 vc_vocab_kanji = {
     # Nouns
 
-
+    "林檎": "ringo.mp3",
+    "学生": "gakusei.mp3",
+    "猫": "neko.mp3",
+    "医者": "isha.mp3",
+    "本": "hon.mp3",
+    "学校": "gakkou.mp3",
+    "先生": "sensei.mp3",
+    "傘": "kasa.mp3",
+    "新聞": "shinbun.mp3",
+    "自転車": "jitensha.mp3",
+    "時計": "tokei.mp3",
+    "魚": "sakana.mp3",
+    "靴": "kutsu",
+    "銀行": "ginkou.mp3",
+    "郵便局": "yuubinkyoku.mp3",
+    "音楽": "ongaku.mp3",
+    "ぉ酒": "osake.mp3",
+    "珈琲": "koohii.mp3",
+    "水": "mizu.mp3",
+    "お金": "okane.mp3",
+    "円": "en.mp3"
 }

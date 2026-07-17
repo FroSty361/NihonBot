@@ -1,8 +1,9 @@
+import os
+
 import discord
+from pathlib import Path
 from typing import Optional
-
 from discord import ClientException
-
 from botProcesses.bot_process_definitions import BaseQuizProcess, Processes
 from emoji import emojize
 
@@ -67,6 +68,8 @@ class BaseQuizView(discord.ui.View):
                 await interaction.followup.send(f"What Is Romaji For {correct_answer[0]}?", view=self)
             case Processes.ICON_VOCAB_QUIZ_PRACTICE:
                 await interaction.followup.send(f"What Is Vocabulary From {correct_answer[0]}?", view=self)
+            case Processes.VC_VOCAB_QUIZ_PRACTICE:
+                await interaction.followup.send(f"What Is The Correct Vocabulary Word?", view=self)
             case _:
                 print(f"Process Type For Displaying Question In Quiz Practice View Is Not Supported, {process_type.value}")
 
@@ -181,24 +184,40 @@ class VCQuizPracticeView(BaseQuizView):
             await interaction.followup.send(response[0], ephemeral=(not response[1]))
 
             if response[1] == False:
-                await self.botProcess.create_question(interaction)
+                await self.botProcess.create_question(interaction, self.vc)
 
         return answer_button_callback
 
     def create_sound_button(self):
         sound_button = discord.ui.Button(label="Play Sound", style=discord.ButtonStyle.primary, custom_id=self.PLAY_VC_SOUND_BUTTON_ID_STRING)
 
-    def create_sound_button_callback(self):
-        for answer in self.botProcess.currentAnswersForQuestion:
-            is_answer = answer[2]
+        sound_button.callback = self.create_sound_button_callback()
 
-            if is_answer:
-                self.play_sound(answer[0])
+        self.add_item(sound_button)
+
+    def create_sound_button_callback(self):
+        async def create_sound_button_callback(interaction: discord.Interaction):
+            for answer in self.botProcess.currentAnswersForQuestion:
+                is_answer = answer[2]
+
+                if is_answer:
+                    self.play_sound(answer[0])
+
+                    return
+
+        return create_sound_button_callback
+
 
     def play_sound(self, name: str):
-        path = f"../../assets/sounds/vocab_sounds/{name}"
+        path = Path(__file__).resolve().parent.parent.parent
+        path = path / 'assets' / 'sounds' / 'vocab_sounds' / name
+
+        if not path.exists():
+            print(f"Can Not Find Path {path}")
+
+            return
 
         try:
-            self.vc.play(discord.FFmpegPCMAudio(path))
-        except ClientException:
-            print(f"{path} Is Not A Valid Path")
+            self.vc.play(discord.FFmpegPCMAudio(str(path), executable="ffmpeg"))
+        except Exception as e:
+            print(e)

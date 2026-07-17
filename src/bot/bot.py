@@ -97,7 +97,7 @@ async def vc_vocab(interaction: discord.Interaction, amount: str, use_furigana: 
         return
 
     if not interaction.user.voice:
-        await interaction.response.send_message(f"You Must Be In A Voice Channel For {Processes.VC_VOCAB_QUIZ_PRACTICE}", ephemeral=True)
+        await interaction.response.send_message(f"You Must Be In A Voice Channel For {Processes.VC_VOCAB_QUIZ_PRACTICE.value}", ephemeral=True)
 
         return
 
@@ -111,8 +111,10 @@ async def vc_vocab(interaction: discord.Interaction, amount: str, use_furigana: 
         vc = await voice_channel.connect()
     except discord.ClientException:
         vc = interaction.guild.voice_client
+    except Exception as e:
+        print(e)
 
-    await interaction.response.send_message("Ok Lets Start!")
+    await interaction.followup.send("Ok Lets Start!")
 
     user.CurrentProcess = VCVocabPracticeProcess(amount, use_furigana)
 
