@@ -270,3 +270,37 @@ vc_vocab_kanji = {
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
+
+vc_vocab_english = {
+    # Nouns
+
+    "Apple": "ringo.mp3",
+    "Student": "gakusei.mp3",
+    "Cat": "neko.mp3",
+    "Doctor": "isha.mp3",
+    "Book": "hon.mp3",
+    "School": "gakkou.mp3",
+    "Teacher": "sensei.mp3",
+    "Pen": "pen.mp3",
+    "Smartphone": "sumaho.mp3",
+    "Umbrella": "kasa.mp3",
+    "Newspaper": "shinbun.mp3",
+    "Bicycle": "jitensha.mp3",
+    "Notebook": "nooto.mp3",
+    "Watch": "tokei.mp3",
+    "Fish": "sakana.mp3",
+    "Shoes": "kutsu",
+    "Bank": "ginkou.mp3",
+    "Restroom": "toire.mp3",
+    "Post Office": "yuubinkyoku.mp3",
+    "Music": "ongaku.mp3",
+    "Tennis": "tenisu.mp3",
+    "TV": "terebi.mp3",
+    "Ice Cream": "aisukuriimu.mp3",
+    "Hamburger": "hanbaagaa.mp3",
+    "Sake": "osake.mp3",
+    "Coffee": "koohii.mp3",
+    "Water": "mizu.mp3",
+    "Money": "okane.mp3",
+    "Yen": "en.mp3"
+}

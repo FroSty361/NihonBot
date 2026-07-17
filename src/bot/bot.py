@@ -88,7 +88,12 @@ async def icon_vocab(interaction: discord.Interaction, amount: str, use_furigana
 @bot.tree.command(guild=TEST_GUILD, name="vc_vocab", description="Practice Vocabulary Sounds")
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.allowed_installs(guilds=True, users=True)
-async def vc_vocab(interaction: discord.Interaction, amount: str, use_furigana: bool):
+@app_commands.choices(text_type=[
+    app_commands.Choice(name="Furigana", value="furigana"),
+    app_commands.Choice(name="Kanji", value="kanji"),
+app_commands.Choice(name="English", value="english")
+])
+async def vc_vocab(interaction: discord.Interaction, amount: str, text_type: app_commands.Choice[str]):
     user = await register_user(interaction) # Or Just Get User If Already Registered In Dictionary
 
     if user.process != Processes.NONE:
@@ -116,7 +121,7 @@ async def vc_vocab(interaction: discord.Interaction, amount: str, use_furigana: 
 
     await interaction.followup.send("Ok Lets Start!")
 
-    user.CurrentProcess = VCVocabPracticeProcess(amount, use_furigana)
+    user.CurrentProcess = VCVocabPracticeProcess(amount, text_type.value)
 
     await user.CurrentProcess.create_question(interaction, vc)
 
