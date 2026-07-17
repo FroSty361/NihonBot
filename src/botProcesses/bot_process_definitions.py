@@ -4,7 +4,8 @@ from enum import Enum
 class Processes(Enum):
     NONE = "None",
     KANA_QUIZ_PRACTICE = "Kana Quiz Practice",
-    ICON_VOCAB_QUIZ_PRACTICE = "Icon Vocab Quiz Practice"
+    ICON_VOCAB_QUIZ_PRACTICE = "Icon Vocab Quiz Practice",
+    VC_VOCAB_QUIZ_PRACTICE = "VC Vocab Quiz Practice"
 
 class BaseQuizProcess:
     def __init__(self, amount: str, process_type: Processes):

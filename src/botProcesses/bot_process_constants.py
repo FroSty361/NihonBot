@@ -209,3 +209,17 @@ icons_kanji_time = {
     "🕚": "十一時",
     "🕛": "十二時"
 }
+
+# Sounds Vocabulary
+
+vc_vocab_furigana = {
+    # Nouns
+
+
+}
+
+vc_vocab_kanji = {
+    # Nouns
+
+
+}

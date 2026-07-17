@@ -1,11 +1,11 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
+from botProcesses.vc_vocab_process import VCVocabPracticeProcess
 from dataManagement.runtime_data_management import register_user
 from botProcesses.bot_process_definitions import Processes
 from botProcesses.kana_practice_process import KanaPracticeProcess
 from botProcesses.icon_vocab_process import IconVocabProcess
-from botProcesses.bot_process_constants import hiragana
 
 intents = discord.Intents.all()
 intents.message_content = True
@@ -84,6 +84,39 @@ async def icon_vocab(interaction: discord.Interaction, amount: str, use_furigana
     user.CurrentProcess = IconVocabProcess(amount, use_furigana, add_flags, add_time)
 
     await user.CurrentProcess.create_question(interaction)
+
+@bot.tree.command(guild=TEST_GUILD, name="vc_vocab", description="Practice Vocabulary Sounds")
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+@app_commands.allowed_installs(guilds=True, users=True)
+async def vc_vocab(interaction: discord.Interaction, amount: str, use_furigana: bool):
+    user = await register_user(interaction) # Or Just Get User If Already Registered In Dictionary
+
+    if user.process != Processes.NONE:
+        await send_user_already_in_process_error(interaction, user.process)
+
+        return
+
+    if not interaction.user.voice:
+        await interaction.response.send_message(f"You Must Be In A Voice Channel For {Processes.VC_VOCAB_QUIZ_PRACTICE}", ephemeral=True)
+
+        return
+
+    user.process = Processes.VC_VOCAB_QUIZ_PRACTICE
+
+    await interaction.response.defer()
+
+    voice_channel = interaction.user.voice.channel
+
+    try:
+        vc = await voice_channel.connect()
+    except discord.ClientException:
+        vc = interaction.guild.voice_client
+
+    await interaction.response.send_message("Ok Lets Start!")
+
+    user.CurrentProcess = VCVocabPracticeProcess(amount, use_furigana)
+
+    await user.CurrentProcess.create_question(interaction, vc)
 
 # Comment
 

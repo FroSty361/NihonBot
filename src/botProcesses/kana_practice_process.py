@@ -4,7 +4,6 @@ from views.views import QuizPracticeView
 from botProcesses.bot_process_constants import hiragana, katakana
 from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
 
-
 class KanaPracticeProcess(BaseQuizProcess):
     def __init__(self, amount: str, kana_type: str):
         super().__init__(amount, Processes.KANA_QUIZ_PRACTICE)

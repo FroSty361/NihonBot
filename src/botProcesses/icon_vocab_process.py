@@ -4,7 +4,6 @@ from botProcesses.bot_process_constants import icons_furigana, icons_furigana_fl
 from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
 from views.views import QuizPracticeView
 
-
 class IconVocabProcess(BaseQuizProcess):
     def __init__(self, amount: str, use_furigana: bool, add_flags: bool = False, add_time: bool = False):
         super().__init__(amount, Processes.ICON_VOCAB_QUIZ_PRACTICE)
