@@ -30,9 +30,9 @@ Command arguments are separated by one space
 <ins>_<sup>*</sup> = required_</ins>
 ### Kana Practice
 
-| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Kana Type***                                                |
-|---------------------------|---------------------------------------------|----------------------------------------------------------------------|
-| /kana                     | Type "indef" for an indefinite amount       | Type 'h' for hiragana. 'k' for katakana. 'b' or leave blank for both |
+| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Kana Type***                                          |
+|---------------------------|---------------------------------------------|----------------------------------------------------------------|
+| /kana                     | Type "indef" for an indefinite amount       | Display possible answers in either hiragana, katakana, or both |
 
 ### Icon Vocab Practice
 
