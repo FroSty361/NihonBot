@@ -16,9 +16,11 @@ class KanaPracticeProcess(BaseQuizProcess):
         kana_type = kana_type.lower()
 
         if kana_type == "h": # h For Hiragana
+            self.practicingHiragana = True
             self.practicingKatakana = False
         elif kana_type == "k": # k For Katakana
             self.practicingHiragana = False
+            self.practicingKatakana = True
         else:
             self.practicingHiragana = True
             self.practicingKatakana = True

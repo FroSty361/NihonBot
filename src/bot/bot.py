@@ -50,7 +50,12 @@ async def docs(interaction: discord.Interaction, choice: app_commands.Choice[str
 @bot.tree.command(guild=TEST_GUILD, name="kana", description="Practice Kana")
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.allowed_installs(guilds=True, users=True)
-async def kana(interaction: discord.Interaction, amount: str, kana_type: str = 'b'):
+@app_commands.choices(kana_type=[
+    app_commands.Choice(name="Hiragana", value="h"),
+    app_commands.Choice(name="Katakana", value="k"),
+    app_commands.Choice(name="Both", value="b")
+])
+async def kana(interaction: discord.Interaction, amount: str, kana_type: app_commands.Choice[str]):
     user = await register_user(interaction) # Or Just Get User If Already Registered In Dictionary
 
     if user.process != Processes.NONE:
@@ -62,7 +67,7 @@ async def kana(interaction: discord.Interaction, amount: str, kana_type: str = '
 
     await interaction.response.send_message("Ok Lets Start!")
 
-    user.CurrentProcess = KanaPracticeProcess(amount, kana_type)
+    user.CurrentProcess = KanaPracticeProcess(amount, kana_type.value)
 
     await user.CurrentProcess.create_question(interaction)
 
