@@ -20,7 +20,7 @@ Table Of Contents
 
 Command prefix is '/' e.g. /kana
 
-Command arguments are seperated by one space
+Command arguments are separated by one space
 
 ## Contents
 
@@ -39,6 +39,12 @@ Command arguments are seperated by one space
 | ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Use Furigana***                                      | ***Arg - Add Flags***       | ***Arg - Add Time***                         |
 |---------------------------|---------------------------------------------|---------------------------------------------------------------|-----------------------------|----------------------------------------------|
 | /icon_vocab               | Type "indef" for an indefinite amount       | True to use furigana for pronunciation. Otherwise shows kanji | Adds Flags To Practice With | Add Clocks To Practice Numbers And Time With |
+
+### VC Vocab Practice
+
+| ***Command<sup>*</sup>*** | ***Arg - Amount Of Questions<sup>*</sup>*** | ***Arg - Text Type***                                      |
+|---------------------------|---------------------------------------------|------------------------------------------------------------|
+| /vc_vocab                 | Type "indef" for an indefinite amount       | Display possible answers in either kana, kanji, or english |
 
 # Stats
 
