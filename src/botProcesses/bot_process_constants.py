@@ -79,6 +79,7 @@ icons_furigana = {
 
     "🍎": "りんご",
     "🧑‍🎓": "がくせい",
+    "🐶": "いぬ",
     "🐱": "ねこ",
     "🧑‍⚕️": "いしゃ",
     "📖": "ほん",
@@ -156,6 +157,7 @@ icons_kanji = {
 
     "🍎": '林檎',
     "🧑‍🎓": '学生',
+    "🐶": "犬",
     "🐱": '猫',
     "🧑‍⚕️": "医者",
     "📖": "本",
@@ -216,6 +218,7 @@ vc_vocab_furigana = {
 
     "りんご": "ringo.mp3",
     "がくせい": "gakusei.mp3",
+    "いぬ": "inu.mp3",
     "ねこ": "neko.mp3",
     "いしゃ": "isha.mp3",
     "ほん": "hon.mp3",
@@ -233,6 +236,7 @@ vc_vocab_furigana = {
     "ぎんこう": "ginkou.mp3",
     "トイレ": "toire.mp3",
     "ゆうびんきょく": "yuubinkyoku.mp3",
+    "えいが": "eiga.mp3",
     "おんがく": "ongaku.mp3",
     "テニス": "tenisu.mp3",
     "テレビ": "terebi.mp3",
@@ -250,6 +254,7 @@ vc_vocab_kanji = {
 
     "林檎": "ringo.mp3",
     "学生": "gakusei.mp3",
+    "犬": "inu.mp3",
     "猫": "neko.mp3",
     "医者": "isha.mp3",
     "本": "hon.mp3",
@@ -263,6 +268,7 @@ vc_vocab_kanji = {
     "靴": "kutsu",
     "銀行": "ginkou.mp3",
     "郵便局": "yuubinkyoku.mp3",
+    "映画": "eiga.mp3",
     "音楽": "ongaku.mp3",
     "ぉ酒": "osake.mp3",
     "珈琲": "koohii.mp3",
@@ -276,6 +282,7 @@ vc_vocab_english = {
 
     "Apple": "ringo.mp3",
     "Student": "gakusei.mp3",
+    "Dog": "inu.mp3",
     "Cat": "neko.mp3",
     "Doctor": "isha.mp3",
     "Book": "hon.mp3",
@@ -293,6 +300,7 @@ vc_vocab_english = {
     "Bank": "ginkou.mp3",
     "Restroom": "toire.mp3",
     "Post Office": "yuubinkyoku.mp3",
+    "Movie": "eiga.mp3",
     "Music": "ongaku.mp3",
     "Tennis": "tenisu.mp3",
     "TV": "terebi.mp3",
