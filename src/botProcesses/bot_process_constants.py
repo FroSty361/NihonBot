@@ -249,7 +249,10 @@ vc_vocab_furigana = {
     "ハンバーガー": "hanbaagaa.mp3",
     "ぉさけ": "osake.mp3",
     "コーヒー": "koohii.mp3",
+    "おちゃ": "ocha.mp3",
     "みず": "mizu.mp3",
+    "まど": "mado.mp3",
+    "いす": "isu.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -277,7 +280,9 @@ vc_vocab_kanji = {
     "音楽": "ongaku.mp3",
     "ぉ酒": "osake.mp3",
     "珈琲": "koohii.mp3",
+    "お茶": "ocha.mp3",
     "水": "mizu.mp3",
+    "窓": "mado.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -313,7 +318,10 @@ vc_vocab_english = {
     "Hamburger": "hanbaagaa.mp3",
     "Sake": "osake.mp3",
     "Coffee": "koohii.mp3",
+    "Green Tea": "ocha.mp3",
     "Water": "mizu.mp3",
+    "Window": "mado.mp3",
+    "Chair": "isu.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
