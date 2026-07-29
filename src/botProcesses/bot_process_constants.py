@@ -114,6 +114,10 @@ icons_furigana = {
     "💧": "みず",
     "🪟": "まど",
     "🪑": "いす",
+    "👔": "ネくたい",
+    "🍷": "ワイン",
+    "🚬": "タバコ",
+    "📷": "カメラ",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -253,6 +257,7 @@ vc_vocab_furigana = {
     "みず": "mizu.mp3",
     "まど": "mado.mp3",
     "いす": "isu.mp3",
+    "カメラ": "kamera.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -322,6 +327,7 @@ vc_vocab_english = {
     "Water": "mizu.mp3",
     "Window": "mado.mp3",
     "Chair": "isu.mp3",
+    "Camera": "kamera.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }

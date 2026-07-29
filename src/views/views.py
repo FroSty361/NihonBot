@@ -1,5 +1,4 @@
 import os
-
 import discord
 from pathlib import Path
 from typing import Optional
