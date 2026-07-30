@@ -118,6 +118,7 @@ icons_furigana = {
     "🍷": "ワイン",
     "🚬": "タバコ",
     "📷": "カメラ",
+    "🚉": "えき",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -189,6 +190,7 @@ icons_kanji = {
     "🟩🍵": "お茶",
     "💧": "水",
     "🪟": "窓",
+    "🚉": "駅",
     "💰": "お金",
     "💴": "円"
 
@@ -258,6 +260,7 @@ vc_vocab_furigana = {
     "まど": "mado.mp3",
     "いす": "isu.mp3",
     "カメラ": "kamera.mp3",
+    "えき": "eki.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -288,6 +291,7 @@ vc_vocab_kanji = {
     "お茶": "ocha.mp3",
     "水": "mizu.mp3",
     "窓": "mado.mp3",
+    "駅": "eki.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -328,6 +332,7 @@ vc_vocab_english = {
     "Window": "mado.mp3",
     "Chair": "isu.mp3",
     "Camera": "kamera.mp3",
+    "Station": "eki.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
