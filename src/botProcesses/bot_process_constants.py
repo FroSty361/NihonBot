@@ -120,6 +120,11 @@ icons_furigana = {
     "📷": "カメラ",
     "🚉": "えき",
     "🍉": "すいか",
+    "🍚": "ごはん",
+    "🏥": "びょういん",
+    "🏨": "ホテル",
+    "🏙️": "まち",
+    "🍞": "パン",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -192,6 +197,9 @@ icons_kanji = {
     "💧": "水",
     "🪟": "窓",
     "🚉": "駅",
+    "🍚": "ご飯",
+    "🏥": "病院",
+    "🏙️": "町",
     "💰": "お金",
     "💴": "円"
 
@@ -262,6 +270,11 @@ vc_vocab_furigana = {
     "いす": "isu.mp3",
     "カメラ": "kamera.mp3",
     "えき": "eki.mp3",
+    "ごはん": "gohan.mp3",
+    "びょういん": "byouin.mp3",
+    "ホテル": "hoteru.mp3",
+    "まち": "machi.mp3",
+    "パン": "pan.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -293,6 +306,9 @@ vc_vocab_kanji = {
     "水": "mizu.mp3",
     "窓": "mado.mp3",
     "駅": "eki.mp3",
+    "ご飯": "gohan.mp3",
+    "病院": "byouin.mp3",
+    "町": "machi.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -334,6 +350,11 @@ vc_vocab_english = {
     "Chair": "isu.mp3",
     "Camera": "kamera.mp3",
     "Station": "eki.mp3",
+    "Rice Meal": "gohan.mp3",
+    "Hospital": "byouin.mp3",
+    "Hotel": "hoteru.mp3",
+    "City": "machi.mp3",
+    "Bread": "pan.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
