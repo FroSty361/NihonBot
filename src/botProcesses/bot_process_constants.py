@@ -128,6 +128,7 @@ icons_furigana = {
     "➡️": "みぎ",
     "⬅️": "ひだり",
     "👶": "あかちゃん",
+    "🏯": "おてら",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -206,6 +207,7 @@ icons_kanji = {
     "➡️": "右",
     "⬅️": "左",
     "👶": "赤ちゃん",
+    "🏯": "お寺",
     "💰": "お金",
     "💴": "円"
 
@@ -283,6 +285,7 @@ vc_vocab_furigana = {
     "パン": "pan.mp3",
     "みぎ": "migi.mp3",
     "ひだり": "hidari.mp3",
+    "おてら": "otera.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -319,6 +322,7 @@ vc_vocab_kanji = {
     "町": "machi.mp3",
     "右": "migi.mp3",
     "左": "hidari.mp3",
+    "お寺": "otera.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -367,6 +371,7 @@ vc_vocab_english = {
     "Bread": "pan.mp3",
     "Right": "migi.mp3",
     "Left": "hidari.mp3",
+    "Temple": "otera.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
