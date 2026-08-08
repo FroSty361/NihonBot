@@ -129,6 +129,8 @@ icons_furigana = {
     "⬅️": "ひだり",
     "👶": "あかちゃん",
     "🏯": "おてら",
+    "🚌": "バス",
+    "🚏": "バスてい",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -208,6 +210,7 @@ icons_kanji = {
     "⬅️": "左",
     "👶": "赤ちゃん",
     "🏯": "お寺",
+    "🚏": "バス停",
     "💰": "お金",
     "💴": "円"
 
@@ -286,6 +289,8 @@ vc_vocab_furigana = {
     "みぎ": "migi.mp3",
     "ひだり": "hidari.mp3",
     "おてら": "otera.mp3",
+    "バス": "basu.mp3",
+    "バスてい": "basutei.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -323,6 +328,7 @@ vc_vocab_kanji = {
     "右": "migi.mp3",
     "左": "hidari.mp3",
     "お寺": "otera.mp3",
+    "バス停": "basutei.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -372,6 +378,8 @@ vc_vocab_english = {
     "Right": "migi.mp3",
     "Left": "hidari.mp3",
     "Temple": "otera.mp3",
+    "Bus": "basu.mp3",
+    "Bus Stop": "basutei.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
