@@ -138,6 +138,7 @@ icons_furigana = {
     "🏄‍♂️": "サーフィン",
     "️🎁": "おくりもの",
     "️♨️": "おんせん",
+    "️🎂 🎉": "たんじょうび",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -224,6 +225,7 @@ icons_kanji = {
     "☁️ 🌩️ 🌧️ 🌨️": "天気",
     "️🎁": "贈り物",
     "️♨️": "温泉",
+    "️🎂 🎉": "誕生日",
     "💰": "お金",
     "💴": "円"
 
@@ -309,6 +311,7 @@ vc_vocab_furigana = {
     "てんき": "tenki.mp3",
     "サーフィン": "saafin.mp3",
     "おんせん": "onsen.mp3",
+    "たんじょうび": "tanjoubi.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -351,6 +354,7 @@ vc_vocab_kanji = {
     "バス停": "basutei.mp3",
     "天気": "tenki.mp3",
     "温泉": "onsen.mp3",
+    "誕生日": "tanjoubi.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -407,6 +411,7 @@ vc_vocab_english = {
     "Weather": "tenki.mp3",
     "Surfing": "saafin.mp3",
     "Hot Spring": "onsen.mp3",
+    "Birthday": "tanjoubi.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
