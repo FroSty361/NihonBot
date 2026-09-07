@@ -142,6 +142,7 @@ icons_furigana = {
     "️🏊‍♂️": "およぐ",
     "️🌅": "ひので",
     "️🧳": "にもつ",
+    "️💻": "コンピュータ",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -320,6 +321,7 @@ vc_vocab_furigana = {
     "たんじょうび": "tanjoubi.mp3",
     "およぐ": "oyogu.mp3",
     "にもつ": "nimotsu.mp3",
+    "コンピュータ": "konpyuuta.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -424,6 +426,7 @@ vc_vocab_english = {
     "Birthday": "tanjoubi.mp3",
     "To Swim": "oyogu.mp3",
     "Luggage": "nimotsu.mp3",
+    "Computer": "konpyuuta.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
