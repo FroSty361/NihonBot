@@ -1,8 +1,8 @@
 import discord
 import random
-from views.views import QuizPracticeView
-from botProcesses.bot_process_constants import hiragana, katakana
-from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
+from src.views.views import QuizPracticeView
+from src.botProcesses.bot_process_constants import hiragana, katakana
+from src.botProcesses.bot_process_definitions import Processes, BaseQuizProcess
 
 class KanaPracticeProcess(BaseQuizProcess):
     def __init__(self, amount: str, kana_type: str):

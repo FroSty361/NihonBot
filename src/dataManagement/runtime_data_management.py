@@ -1,8 +1,8 @@
 import discord
 from dataclasses import dataclass, field
 from typing import Optional
-from botProcesses.kana_practice_process import KanaPracticeProcess
-from botProcesses.bot_process_definitions import Processes
+from src.botProcesses.kana_practice_process import KanaPracticeProcess
+from src.botProcesses.bot_process_definitions import Processes
 
 users_runtime_data: dict[int, UserRuntimeData] = {}
 

@@ -1,11 +1,11 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-from botProcesses.vc_vocab_process import VCVocabPracticeProcess
-from dataManagement.runtime_data_management import register_user
-from botProcesses.bot_process_definitions import Processes
-from botProcesses.kana_practice_process import KanaPracticeProcess
-from botProcesses.icon_vocab_process import IconVocabProcess
+from src.botProcesses.vc_vocab_process import VCVocabPracticeProcess
+from src.dataManagement.runtime_data_management import register_user
+from src.botProcesses.bot_process_definitions import Processes
+from src.botProcesses.kana_practice_process import KanaPracticeProcess
+from src.botProcesses.icon_vocab_process import IconVocabProcess
 
 intents = discord.Intents.all()
 intents.message_content = True

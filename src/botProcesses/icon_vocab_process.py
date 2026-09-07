@@ -1,8 +1,8 @@
 import random
 import discord
-from botProcesses.bot_process_constants import icons_furigana, icons_furigana_flags, icons_furigana_time, icons_kanji, icons_kanji_flags, icons_kanji_time
-from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
-from views.views import QuizPracticeView
+from src.botProcesses.bot_process_constants import icons_furigana, icons_furigana_flags, icons_furigana_time, icons_kanji, icons_kanji_flags, icons_kanji_time
+from src.botProcesses.bot_process_definitions import Processes, BaseQuizProcess
+from src.views.views import QuizPracticeView
 
 class IconVocabProcess(BaseQuizProcess):
     def __init__(self, amount: str, use_furigana: bool, add_flags: bool = False, add_time: bool = False):

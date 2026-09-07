@@ -1,8 +1,8 @@
 import discord
 import random
-from views.views import VCQuizPracticeView
-from botProcesses.bot_process_constants import vc_vocab_furigana, vc_vocab_kanji, vc_vocab_english
-from botProcesses.bot_process_definitions import Processes, BaseQuizProcess
+from src.views.views import VCQuizPracticeView
+from src.botProcesses.bot_process_constants import vc_vocab_furigana, vc_vocab_kanji, vc_vocab_english
+from src.botProcesses.bot_process_definitions import Processes, BaseQuizProcess
 
 class VCVocabPracticeProcess(BaseQuizProcess):
     def __init__(self, amount: str, text_type: str):

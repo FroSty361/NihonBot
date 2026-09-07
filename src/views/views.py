@@ -3,7 +3,7 @@ import discord
 from pathlib import Path
 from typing import Optional
 from discord import ClientException
-from botProcesses.bot_process_definitions import BaseQuizProcess, Processes
+from src.botProcesses.bot_process_definitions import BaseQuizProcess, Processes
 from emoji import emojize
 
 class BaseQuizView(discord.ui.View):
