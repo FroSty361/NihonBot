@@ -6,7 +6,6 @@ from dataManagement.runtime_data_management import register_user
 from botProcesses.bot_process_definitions import Processes
 from botProcesses.kana_practice_process import KanaPracticeProcess
 from botProcesses.icon_vocab_process import IconVocabProcess
-from keep_alive import keep_alive
 
 intents = discord.Intents.all()
 intents.message_content = True
@@ -15,8 +14,6 @@ intents.messages = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 TEST_GUILD = discord.Object(id=1515433987105886298)
-
-keep_alive()
 
 @bot.event
 async def on_ready():
