@@ -143,6 +143,9 @@ icons_furigana = {
     "️🌅": "ひので",
     "️🧳": "にもつ",
     "️💻": "コンピュータ",
+    "️⏭️": "つぎ",
+    "️⚡🔌": "でんき",
+    "🚆🚋": "でんしゃ",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -233,6 +236,9 @@ icons_kanji = {
     "️🏊‍♂️": "泳ぐ",
     "️🌅": "日の出",
     "️🧳": "荷物",
+    "️⏭️": "次",
+    "️⚡🔌": "電気",
+    "🚆🚋": "電車",
     "💰": "お金",
     "💴": "円"
 
@@ -322,6 +328,9 @@ vc_vocab_furigana = {
     "およぐ": "oyogu.mp3",
     "にもつ": "nimotsu.mp3",
     "コンピュータ": "konpyuuta.mp3",
+    "つぎ": "tsugi.mp3",
+    "でんき": "denki.mp3",
+    "でんしゃ": "densha.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -367,6 +376,9 @@ vc_vocab_kanji = {
     "誕生日": "tanjoubi.mp3",
     "泳ぐ": "oyogu.mp3",
     "荷物": "nimotsu.mp3",
+    "次": "tsugi.mp3",
+    "電気": "denki.mp3",
+    "電車": "densha.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -427,6 +439,9 @@ vc_vocab_english = {
     "To Swim": "oyogu.mp3",
     "Luggage": "nimotsu.mp3",
     "Computer": "konpyuuta.mp3",
+    "Next": "tsugi.mp3",
+    "Electricity": "denki.mp3",
+    "Train": "densha.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
