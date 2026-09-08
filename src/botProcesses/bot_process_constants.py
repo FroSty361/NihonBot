@@ -146,6 +146,7 @@ icons_furigana = {
     "️⏭️": "つぎ",
     "️⚡🔌": "でんき",
     "🚆🚋": "でんしゃ",
+    "🚿": "シャワー",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -331,6 +332,7 @@ vc_vocab_furigana = {
     "つぎ": "tsugi.mp3",
     "でんき": "denki.mp3",
     "でんしゃ": "densha.mp3",
+    "シャワー": "shawaa.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -442,6 +444,7 @@ vc_vocab_english = {
     "Next": "tsugi.mp3",
     "Electricity": "denki.mp3",
     "Train": "densha.mp3",
+    "Shower": "shawaa.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
