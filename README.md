@@ -48,4 +48,4 @@ Command arguments are separated by one space
 
 # Stats
 
-![NihonBot](http://counter.valgul.moe/@NihonBot?name=NihonBot&theme=booru-jaypee&padding=7&offset=0&align=bottom&scale=1&pixelated=1&darkmode=auto)
+![NihonBot](https://count.getloli.com/@NihonBot?name=NihonBot&theme=booru-jaypee&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
