@@ -148,6 +148,9 @@ icons_furigana = {
     "🚆🚋": "でんしゃ",
     "🚿": "シャワー",
     "🌳 🌲 🌴": "き",
+    "🎄 🎅 🎁": "クリスマス",
+    "⛰️": "やま",
+    "🗻": "ふじさん",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -242,7 +245,8 @@ icons_kanji = {
     "️⚡🔌": "電気",
     "🚆🚋": "電車",
     "🌳 🌲 🌴": "木",
-    "🎄 🎅 🎁": "クリスマス",
+    "⛰️": "山",
+    "🗻": "富士山",
     "💰": "お金",
     "💴": "円"
 
@@ -336,6 +340,7 @@ vc_vocab_furigana = {
     "でんき": "denki.mp3",
     "でんしゃ": "densha.mp3",
     "シャワー": "shawaa.mp3",
+    "やま": "yama.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -384,6 +389,7 @@ vc_vocab_kanji = {
     "次": "tsugi.mp3",
     "電気": "denki.mp3",
     "電車": "densha.mp3",
+    "山": "yama.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -448,6 +454,7 @@ vc_vocab_english = {
     "Electricity": "denki.mp3",
     "Train": "densha.mp3",
     "Shower": "shawaa.mp3",
+    "Mountain": "yama.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
