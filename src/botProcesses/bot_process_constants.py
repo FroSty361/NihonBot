@@ -152,6 +152,11 @@ icons_furigana = {
     "⛰️": "やま",
     "🗻": "ふじさん",
     "🌐": "インターネット",
+    "🏬": "デパート",
+    "👁️": "め",
+    "🎵 🎶️": "うた",
+    "⭕  (club activity)": "サークル",
+    "🚗": "くるま",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -248,6 +253,9 @@ icons_kanji = {
     "🌳 🌲 🌴": "木",
     "⛰️": "山",
     "🗻": "富士山",
+    "👁️": "目",
+    "🎵 🎶️": "歌",
+    "🚗": "車",
     "💰": "お金",
     "💴": "円"
 
@@ -342,6 +350,11 @@ vc_vocab_furigana = {
     "でんしゃ": "densha.mp3",
     "シャワー": "shawaa.mp3",
     "やま": "yama.mp3",
+    "デパート": "depaato.mp3",
+    "め": "me.mp3",
+    "うた": "uta.mp3",
+    "サークル": "saakuru.mp3",
+    "くるま": "kuruma.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -391,6 +404,9 @@ vc_vocab_kanji = {
     "電気": "denki.mp3",
     "電車": "densha.mp3",
     "山": "yama.mp3",
+    "目": "me.mp3",
+    "歌": "uta.mp3",
+    "車": "kuruma.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -456,6 +472,11 @@ vc_vocab_english = {
     "Train": "densha.mp3",
     "Shower": "shawaa.mp3",
     "Mountain": "yama.mp3",
+    "Department Store": "depaato.mp3",
+    "Eye": "me.mp3",
+    "Song": "uta.mp3",
+    "Club Activity": "saakuru.mp3",
+    "Car": "kuruma.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
