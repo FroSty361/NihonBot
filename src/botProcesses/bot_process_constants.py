@@ -157,6 +157,9 @@ icons_furigana = {
     "🎵 🎶️": "うた",
     "⭕  (club activity)": "サークル",
     "🚗": "くるま",
+    "🌧️": "あめ",
+    "️☁️": "くもり",
+    "️🌨️": "ゆき",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -256,6 +259,9 @@ icons_kanji = {
     "👁️": "目",
     "🎵 🎶️": "歌",
     "🚗": "車",
+    "🌧️": "雨",
+    "️☁️": "曇り",
+    "️🌨️": "雪",
     "💰": "お金",
     "💴": "円"
 
@@ -355,6 +361,9 @@ vc_vocab_furigana = {
     "うた": "uta.mp3",
     "サークル": "saakuru.mp3",
     "くるま": "kuruma.mp3",
+    "あめ": "ame.mp3",
+    "くもり": "kumori.mp3",
+    "ゆき": "yuki.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -407,6 +416,9 @@ vc_vocab_kanji = {
     "目": "me.mp3",
     "歌": "uta.mp3",
     "車": "kuruma.mp3",
+    "雨": "ame.mp3",
+    "曇り": "kumori.mp3",
+    "雪": "yuki.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -477,6 +489,9 @@ vc_vocab_english = {
     "Song": "uta.mp3",
     "Club Activity": "saakuru.mp3",
     "Car": "kuruma.mp3",
+    "Rain": "ame.mp3",
+    "Cloudy Weather": "kumori.mp3",
+    "Snow": "yuki.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
