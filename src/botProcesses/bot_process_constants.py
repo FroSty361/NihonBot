@@ -161,6 +161,8 @@ icons_furigana = {
     "️☁️": "くもり",
     "️🌨️": "ゆき",
     "👓": "めがね",
+    "🏢": "かいしゃ",
+    "🧑‍💼": "かいしゃいん",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -264,6 +266,8 @@ icons_kanji = {
     "️☁️": "曇り",
     "️🌨️": "雪",
     "👓": "眼鏡",
+    "🏢": "会社",
+    "🧑‍💼": "会社員",
     "💰": "お金",
     "💴": "円"
 
@@ -367,6 +371,7 @@ vc_vocab_furigana = {
     "くもり": "kumori.mp3",
     "ゆき": "yuki.mp3",
     "めがね": "megane.mp3",
+    "かいしゃいん": "kaishain.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -423,6 +428,7 @@ vc_vocab_kanji = {
     "曇り": "kumori.mp3",
     "雪": "yuki.mp3",
     "眼鏡": "megane.mp3",
+    "会社員": "kaishain.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -497,6 +503,7 @@ vc_vocab_english = {
     "Cloudy Weather": "kumori.mp3",
     "Snow": "yuki.mp3",
     "Glasses": "megane.mp3",
+    "Office Worker": "kaishain.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
