@@ -163,6 +163,10 @@ icons_furigana = {
     "👓": "めがね",
     "🏢": "かいしゃ",
     "🧑‍💼": "かいしゃいん",
+    "🍅": "トマト",
+    "🥢": "はし",
+    "🥳 🎉 🪩": "パーティー",
+    "🛁": "おふろ",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -268,6 +272,8 @@ icons_kanji = {
     "👓": "眼鏡",
     "🏢": "会社",
     "🧑‍💼": "会社員",
+    "🥢": "箸",
+    "🛁": "お風呂",
     "💰": "お金",
     "💴": "円"
 
@@ -372,6 +378,10 @@ vc_vocab_furigana = {
     "ゆき": "yuki.mp3",
     "めがね": "megane.mp3",
     "かいしゃいん": "kaishain.mp3",
+    "トマト": "tomato.mp3",
+    "はし": "hashi.mp3",
+    "パーティー": "paateii.mp3",
+    "おふろ": "ofuro.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -429,6 +439,8 @@ vc_vocab_kanji = {
     "雪": "yuki.mp3",
     "眼鏡": "megane.mp3",
     "会社員": "kaishain.mp3",
+    "箸": "hashi.mp3",
+    "お風呂": "ofuro.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -504,6 +516,10 @@ vc_vocab_english = {
     "Snow": "yuki.mp3",
     "Glasses": "megane.mp3",
     "Office Worker": "kaishain.mp3",
+    "Tomato": "tomato.mp3",
+    "Chopsticks": "hashi.mp3",
+    "Party": "paateii.mp3",
+    "Bath": "ofuro.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
