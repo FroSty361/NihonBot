@@ -170,6 +170,13 @@ icons_furigana = {
     "🍻 🥂 🎉": "かんぱい",
     "🎫🎟️": "チケット",
     "📧": "メール",
+    "⚪": "しろい",
+    "⚫": "くろい",
+    "🔴": "あかい",
+    "🔵": "あおい",
+    "🟡": "きいろい",
+    "🟣": "むらさき",
+    "🟢": "みどり",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -278,6 +285,13 @@ icons_kanji = {
     "🥢": "箸",
     "🛁": "お風呂",
     "🍻 🥂 🎉": "乾杯",
+    "⚪": "白い",
+    "⚫": "黒い",
+    "🔴": "赤い",
+    "🔵": "青い",
+    "🟡": "黄色い",
+    "🟣": "紫",
+    "🟢": "緑",
     "💰": "お金",
     "💴": "円"
 
@@ -389,6 +403,10 @@ vc_vocab_furigana = {
     "かんぱい": "kanpai.mp3",
     "チケット": "chiketto.mp3",
     "メール": "meeru.mp3",
+    "しろい": "shiroi.mp3",
+    "くろい": "kuroi.mp3",
+    "あかい": "akai.mp3",
+    "あおい": "aoi.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -449,6 +467,10 @@ vc_vocab_kanji = {
     "箸": "hashi.mp3",
     "お風呂": "ofuro.mp3",
     "乾杯": "kanpai.mp3",
+    "白い": "shiroi.mp3",
+    "黒い": "kuroi.mp3",
+    "赤い": "akai.mp3",
+    "青い": "aoi.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -531,6 +553,10 @@ vc_vocab_english = {
     "Cheers!": "kanpai.mp3",
     "Ticket": "chiketto.mp3",
     "Email": "meeru.mp3",
+    "White": "shiroi.mp3",
+    "Black": "kuroi.mp3",
+    "Red": "akai.mp3",
+    "Blue": "aoi.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
