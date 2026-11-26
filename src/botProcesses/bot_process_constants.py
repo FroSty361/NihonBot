@@ -177,6 +177,12 @@ icons_furigana = {
     "🟡": "きいろい",
     "🟣": "むらさき",
     "🟢": "みどり",
+    "🎨 🔴 ⚫ ⚪ 🔵": "いろ",
+    "🍕": "ピザ",
+    "🎸": "ギター",
+    "⚕️ 💊 💉": "くすり",
+    "⛷️": "スキー",
+    "🍱": "おべんとう",
     "💰": "おかね",
     "💵": "ドル",
     "💷": "ポンド",
@@ -292,6 +298,9 @@ icons_kanji = {
     "🟡": "黄色い",
     "🟣": "紫",
     "🟢": "緑",
+    "🎨 🔴 ⚫ ⚪ 🔵": "色",
+    "⚕️ 💊 💉": "薬",
+    "🍱": "お弁当",
     "💰": "お金",
     "💴": "円"
 
@@ -407,6 +416,12 @@ vc_vocab_furigana = {
     "くろい": "kuroi.mp3",
     "あかい": "akai.mp3",
     "あおい": "aoi.mp3",
+    "いろ": "iro.mp3",
+    "ピザ": "piza.mp3",
+    "ギター": "gitaa.mp3",
+    "くすり": "kusuri.mp3",
+    "スキー": "sukii.mp3",
+    "おべんとう": "obentou.mp3",
     "おかね": "okane.mp3",
     "えん": "en.mp3"
 }
@@ -471,6 +486,9 @@ vc_vocab_kanji = {
     "黒い": "kuroi.mp3",
     "赤い": "akai.mp3",
     "青い": "aoi.mp3",
+    "色": "iro.mp3",
+    "薬": "kusuri.mp3",
+    "お弁当": "obentou.mp3",
     "お金": "okane.mp3",
     "円": "en.mp3"
 }
@@ -557,6 +575,12 @@ vc_vocab_english = {
     "Black": "kuroi.mp3",
     "Red": "akai.mp3",
     "Blue": "aoi.mp3",
+    "Color": "iro.mp3",
+    "Pizza": "piza.mp3",
+    "Guitar": "gitaa.mp3",
+    "Medicine": "kusuri.mp3",
+    "Ski": "sukii.mp3",
+    "Bento": "obentou.mp3",
     "Money": "okane.mp3",
     "Yen": "en.mp3"
 }
